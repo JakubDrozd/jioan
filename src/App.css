@@ -1,0 +1,230 @@
+/* Reset stylów */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Sour Gummy", serif;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  overflow: hidden;
+}
+
+.hero {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+  animation: gradientShift 10s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.explanation {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+}
+
+.explanation-content {
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.explanation-content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.time-counter {
+  text-align: center;
+  padding: 2rem;
+  background-color: #f0f8ff;
+}
+
+.time-counter h1 {
+  font-size: 2rem;
+  color: #333;
+}
+
+.time-counter p {
+  font-size: 1.5rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+.carousel-section {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffe4e1;
+}
+
+.section-title{
+  margin-bottom: 1rem;
+  font-size: 3rem;
+  color: #333;
+  text-align: center;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 1rem;
+}
+
+.carousel-content {
+  text-align: center;
+}
+
+.carousel iframe {
+  width: 40vw; /* Domyślna szerokość dla większych ekranów */
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Dla ekranów o szerokości 768px i mniejszych */
+@media (max-width: 768px) {
+  .carousel iframe {
+    width: 90vw; /* Zwiększenie szerokości na mniejszych ekranach */
+  }
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.carousel-button:first-of-type {
+  left: 10px;
+}
+
+.carousel-button:last-of-type {
+  right: 10px;
+}
+
+.memories {
+  padding: 2rem;
+  background-color: #f8f9fa;
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.memories h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.memories p {
+  font-size: 1.2rem;
+  color: #555;
+
+}
+
+.thanks {
+  padding: 2rem;
+  background-color: #ffe4e1;
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thanks h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.thanks p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+section {
+  position: relative; /* Aby przycisk był pozycjonowany względem sekcji */
+}
+
+.scroll-button {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  color: #333;
+  cursor: pointer;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+.scroll-button.scroll-up {
+  top: 20px; /* Przyciski przewijania w górę na górze sekcji */
+}
+
+.scroll-button.scroll-down {
+  bottom: 20px; /* Przyciski przewijania w dół na dole sekcji */
+}
+
+.typing-text {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
+
+.timer {
+  font-style: italic;
+}
