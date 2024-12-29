@@ -5,11 +5,14 @@
   box-sizing: border-box;
 }
 
-body {
+html, body {
   font-family: "Sour Gummy", serif;
   line-height: 1.6;
   scroll-behavior: smooth;
-  overflow: hidden;
+  overflow-x: hidden;
+}
+body{
+  position: relative;
 }
 
 .hero {
@@ -102,10 +105,10 @@ body {
 }
 
 .carousel iframe {
-  width: 40vw; /* Domyślna szerokość dla większych ekranów */
+  width: 40vw;
   border: none;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
 }
 
 /* Dla ekranów o szerokości 768px i mniejszych */
@@ -197,11 +200,11 @@ section {
 }
 
 .scroll-button.scroll-up {
-  top: 20px; /* Przyciski przewijania w górę na górze sekcji */
+  top: 3em; /* Przyciski przewijania w górę na górze sekcji */
 }
 
 .scroll-button.scroll-down {
-  bottom: 20px; /* Przyciski przewijania w dół na dole sekcji */
+  bottom: 3em; /* Przyciski przewijania w dół na dole sekcji */
 }
 
 .typing-text {

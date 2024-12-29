@@ -33,6 +33,10 @@ function App() {
     },
     {
       embedUrl:
+        'https://drive.google.com/file/d/1KQdFki-8xv8xK99UAnXIkZdcBr82bDo-/preview',
+    },
+    {
+      embedUrl:
         'https://drive.google.com/file/d/14wwd5gDNfogoRxklCtLaNLVsjIRu7jPO/preview',
     },
     {
@@ -96,30 +100,12 @@ function App() {
       embedUrl:
         'https://drive.google.com/file/d/1TiXpvvq2eFtxviln54divGvUWOA5CZZA/preview',
     },
-    {
-      embedUrl:
-        'https://drive.google.com/file/d/1FJqp9rjthP7c2xyhFgHxyAl6iglzyMxr/preview',
-    },
-    {
-      embedUrl:
-        'https://drive.google.com/file/d/1gRhMg_AVggvACPFBBRk-yn-u4hQzViSE/preview',
-    },
-    {
-      embedUrl:
-        'https://drive.google.com/file/d/1xvD2R-iAk9tnVIDmpaGKwh2UsyhM8c-n/preview',
-    },
-    {
-      embedUrl:
-        'https://drive.google.com/file/d/1vlU5ZjlHHOrdzO8lV4_ZUGtMegCphkwd/preview',
-    },
-    {
-      embedUrl:
-        'https://drive.google.com/file/d/17TK9yybWRIbPHeNDAiKK7uOL1ouesoC0/preview',
-    },
-    {
-      embedUrl:
-        'https://drive.google.com/file/d/1xqys-Z6yvDZsnsBgNp2Epg1UKt-yMuFi/preview',
-    },
+    {embedUrl:'https://drive.google.com/file/d/1FJqp9rjthP7c2xyhFgHxyAl6iglzyMxr/preview',},
+    {embedUrl:'https://drive.google.com/file/d/1gRhMg_AVggvACPFBBRk-yn-u4hQzViSE/preview',},
+    {embedUrl:'https://drive.google.com/file/d/1xvD2R-iAk9tnVIDmpaGKwh2UsyhM8c-n/preview',},
+    {embedUrl:'https://drive.google.com/file/d/1vlU5ZjlHHOrdzO8lV4_ZUGtMegCphkwd/preview',},
+    {embedUrl:'https://drive.google.com/file/d/17TK9yybWRIbPHeNDAiKK7uOL1ouesoC0/preview',},
+    {embedUrl:'https://drive.google.com/file/d/1xqys-Z6yvDZsnsBgNp2Epg1UKt-yMuFi/preview',},
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -150,7 +136,15 @@ function App() {
   };
 
   useEffect(() => {
-    const startDate = new Date('2024-06-09T00:00:00'); // Data początkowa
+    const interval = setInterval(() => {
+      handleNext();
+    }, 7000);
+
+    return () => clearInterval(interval);
+  }, [currentIndex]);
+
+  useEffect(() => {
+    const startDate = new Date('2024-06-09T19:48:34'); // Data początkowa
     const updateElapsedTime = () => {
       const now = new Date();
       const elapsed = now - startDate;
@@ -188,7 +182,7 @@ function App() {
   </button>
         <div className="explanation-content animate-on-scroll">
           <h1 style={{color: "#333"}}>Z racji tego, że rok 2024 jest bliski końca...</h1>
-          <h2 style={{color: "#333"}}>Stworzyłem stronę, która ma upamiętnić nasze niektóre chwile razem</h2>
+          <h2 style={{color: "#333"}}>Stworzyłem stronę, która ma upamiętnić nasze niektóre chwile razem 🎉</h2>
         </div>
         <button className="scroll-button scroll-down" onClick={() => scrollToSection('carousel')}>
         ↓ 
@@ -200,7 +194,7 @@ function App() {
       <button className="scroll-button scroll-up" onClick={() => scrollToSection('explanation')}>
     ↑ 
   </button>
-        <h1 className="animate-on-scroll section-title">Oto i one!</h1>
+        <h1 className="animate-on-scroll section-title">Oto i one 🥰</h1>
         <div className="carousel">
           <button className="carousel-button" onClick={handlePrev}>
             &#10094;
@@ -232,14 +226,12 @@ function App() {
           <h2>Oczywiście, to jedynie malutki ułamek tego wszystkiego</h2>
           <p>w końcu jesteśmy razem już</p>
         <h1 className='timer' style={{color: "#333"}}>
-          {timeElapsed.days} dni <br />
-          {timeElapsed.hours} godzin <br />
-          {timeElapsed.minutes} minut{' '} <br />
+          {timeElapsed.days} dni<br />
+          {timeElapsed.hours} godziny! <br />
+          {timeElapsed.minutes} minuty{' '} <br />
           {timeElapsed.seconds} sekund
         </h1>
-          <p style={{ color: 'black' }}>
-            A to tylko licząc od kiedy zostaliśmy parą!
-          </p>
+        <p>i było tego o wieeeele więcej!</p>
         </div>
         <button className="scroll-button scroll-down" onClick={() => scrollToSection('thanks')}>
         ↓ 
@@ -254,8 +246,12 @@ function App() {
         <div className="explanation-content animate-on-scroll">
           <h2>Dziękuję za wszystkie wspólne chwile ❤️</h2>
           <p>Jesteś wspaniałą osobą i cieszę się że mogłem kogoś takiego poznać</p>
-          <p>oraz mam nadzieje, że poznam cię jeszcze i jeszcze bardziej!</p>
-          <p style={{fontStyle: 'italic'}}>Kuba</p>
+          <p>Mam nadzieje, że poznam Cię jeszcze i jeszcze bardziej!</p>
+          <p>Słowa nie wyrażą w pełni tegop</p>
+          <p>co chce przekazać</p>
+          <p>dlatego stworzyłem te stronę.</p>
+          <p>Nie jest to wiele, ale mam nadzieje, że Ci się spodoba!</p>
+          <p style={{fontStyle: 'italic', fontSize: "2rem"}}>~Kuba</p>
         </div>
       </section>
     </>
