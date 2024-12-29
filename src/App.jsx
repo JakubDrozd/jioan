@@ -187,8 +187,8 @@ function App() {
     ↑ 
   </button>
         <div className="explanation-content animate-on-scroll">
-          <h1>Z racji tego, że rok 2024 jest bliski końca...</h1>
-          <h2>Stworzyłem stronę, która ma upamiętnić nasze niektóre chwile razem</h2>
+          <h1 style={{color: "#333"}}>Z racji tego, że rok 2024 jest bliski końca...</h1>
+          <h2 style={{color: "#333"}}>Stworzyłem stronę, która ma upamiętnić nasze niektóre chwile razem</h2>
         </div>
         <button className="scroll-button scroll-down" onClick={() => scrollToSection('carousel')}>
         ↓ 
@@ -231,7 +231,7 @@ function App() {
         <div className="explanation-content animate-on-scroll">
           <h2>Oczywiście, to jedynie malutki ułamek tego wszystkiego</h2>
           <p>w końcu jesteśmy razem już</p>
-        <h1 className='timer'>
+        <h1 className='timer' style={{color: "#333"}}>
           {timeElapsed.days} dni <br />
           {timeElapsed.hours} godzin <br />
           {timeElapsed.minutes} minut{' '} <br />
